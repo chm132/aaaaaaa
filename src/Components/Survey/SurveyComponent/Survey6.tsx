@@ -105,7 +105,7 @@ function Survey6({ onNextButtonClick }: Survey6Props) {
     });
 
     console.log(response);
-    onNextButtonClick(6);
+    navigate('result')
   };
 
   // const handleButtonClick = () => {
