@@ -1,23 +1,26 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import TimeLine from '../../../Components/TimeLine';
+import Floating1 from '../../../Components/SurveyFloating/SurveyComponents/Floating1';
+import Floating2 from '../../../Components/SurveyFloating/SurveyComponents/Floating2';
+import Floating4 from '../../../Components/SurveyFloating/SurveyComponents/Floating4';
+import Floating5 from '../../../Components/SurveyFloating/SurveyComponents/Floating5';
+import Floating6 from '../../../Components/SurveyFloating/SurveyComponents/Floating6';
+import Floating7 from '../../../Components/SurveyFloating/SurveyComponents/Floating7';
+import Floating8 from '../../../Components/SurveyFloating/SurveyComponents/Floating8';
+import Floating3 from '../../../Components/SurveyFloating/SurveyComponents/Floating3';
+import FloatingProgressBar from '../../../Components/SurveyFloating/ProgressBar';
 
-import ProgressBar from '../../../Components/Survey/SurveyComponent/ProgressBar';
-import Survey1 from '../../../Components/Survey/SurveyComponent/Survey1';
-import Survey2 from '../../../Components/Survey/SurveyComponent/Survey2';
-import Survey3 from '../../../Components/Survey/SurveyComponent/Survey3';
-import Survey4 from '../../../Components/Survey/SurveyComponent/Survey4';
-import Survey5 from '../../../Components/Survey/SurveyComponent/Survey5';
-import Survey6 from '../../../Components/Survey/SurveyComponent/Survey6';
-import SurveyResult from '../../../Components/Survey/SurveyComponent/Result';
-
-const SurveyComponents = [
-  Survey1,
-  Survey2,
-  Survey3,
-  Survey4,
-  Survey5,
-  Survey6,
+const FloatingComponents = [
+  Floating1,
+  Floating2,
+  Floating3,
+  Floating4,
+  Floating5,
+  Floating6,
+  Floating7,
+  Floating8,
 ];
 
 const SurveyFloating = () => {
@@ -30,14 +33,18 @@ const SurveyFloating = () => {
 
   return (
     <div>
-      <div className=' 배너 자리'></div>
+      <TimeLine
+        title="내용"
+        imgSrc={`/assets/TimeLine/mypage.png`}
+        contents="내용"
+      />
       <div className="w-full h-[627px] bg-[#E6E6E6]">
-        <ProgressBar step={step} />
+        <FloatingProgressBar step={step} />
         <div className="w-[1142px] h-[480px] bg-[#FFFFFF] rounded-[30px] shadow-xl flex relative m-auto top-[47px]">
-          {SurveyComponents.map(
-            (SurveyComponent, index) =>
+          {FloatingComponents.map(
+            (FloatingComponents, index) =>
               step === index + 1 && (
-                <SurveyComponent
+                <FloatingComponents
                   key={index}
                   onNextButtonClick={handleNextButtonClick}
                 />

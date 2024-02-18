@@ -20,6 +20,8 @@ import { RootState } from '../redux/store';
 import { useSelector } from 'react-redux';
 import LessonPage from '../pages/LessonPage/page';
 import SurveyResult from '../Components/Survey/SurveyComponent/Result';
+import SurveyFloating from '../pages/SurveyPage/SurveyFloating.tsx/page';
+import FloatingResult from '../Components/SurveyFloating/SurveyComponents/Result';
 
 const Routes = () => {
   const currentUser = useSelector((state: RootState) => state.currentUser.name);
@@ -40,7 +42,12 @@ const Routes = () => {
         <Route path=":category/:categoryId" element={<CategoryPage />} />
         <Route path="lesson" element={<LessonPage />} />
         <Route path=":category/:categoryId/survey" element={<SurveyPage />} />
-        <Route path=":category/:categoryId/survey/result" element={<SurveyResult />} />
+        <Route
+          path=":category/:categoryId/survey/result"
+          element={<SurveyResult />}
+        />
+        <Route path="floating" element={<SurveyFloating />} />
+        <Route path="floating/result/floating" element={<FloatingResult />} />
 
         {/* 인증과정 (로그인, 회원가입) 라우팅입니다. */}
         <Route path="auth">
